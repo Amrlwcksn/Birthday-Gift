@@ -217,7 +217,7 @@ const byte PROGMEM cake[][128] = {
 
 
 int tempo = 140;
-int buzzer = 26;
+int buzzer = 16;
 int melody[] = {
 
   NOTE_C4,4, NOTE_C4,8, 
@@ -292,6 +292,12 @@ OK = false;
       halaman = 6;
     }else if (halaman == 6 && halaman == 6) {
       halaman = 7;
+    }else if (halaman == 7 && halaman == 7) {
+      halaman = 8;
+    }else if (halaman == 8 && halaman == 8) {
+      halaman = 9;
+    }else if (halaman == 9 && halaman == 9) {
+      halaman = 10;
     }
   }
 
@@ -340,7 +346,7 @@ void tampil() {
     lcd.print("Sekarang tgl");
     lcd.setTextSize(1);
     lcd.setCursor(35,15);
-    lcd.print("berapa yaa");
+    lcd.print("berapa yaa?");
     lcd.setCursor(35,25);
     lcd.print("<(Next)>");
    
@@ -416,9 +422,45 @@ void tampil() {
     lcd.print("Semoga panjang umur,");
     lcd.setTextSize(1);
     lcd.setCursor(0,10);
-    lcd.print("nambah imut,nambah");
+    lcd.print("dilimpahkan rejekinya,");
+    lcd.setCursor(5,20);
+    lcd.print("<(Next)>");
+  }
+   else if (halaman == 8) {
+    lcd.clearDisplay();
+    lcd.setTextSize(1);
+    lcd.setTextColor(WHITE);
+    lcd.setCursor(0, 0);
+    lcd.print("dimudahkan segala");
+    lcd.setTextSize(1);
+    lcd.setCursor(0,10);
+    lcd.print("urusannya.");
     lcd.setCursor(0,20);
-    lcd.print("lucu-  <(Next)>  ");
+    lcd.print("<(Next)>");
+  }
+  else if (halaman == 9) {
+    lcd.clearDisplay();
+    lcd.setTextSize(1);
+    lcd.setTextColor(WHITE);
+    lcd.setCursor(0, 0);
+    lcd.print("Tambah cantik,");
+    lcd.setTextSize(1);
+    lcd.setCursor(0,10);
+    lcd.print("tambah lucu,");
+    lcd.setCursor(0,20);
+    lcd.print("tambah imut, <(Next)>");
+  }
+   else if (halaman == 10) {
+    lcd.clearDisplay();
+    lcd.setTextSize(1);
+    lcd.setTextColor(WHITE);
+    lcd.setCursor(0, 0);
+    lcd.print("dan yg terakhir");
+    lcd.setTextSize(1);
+    lcd.setCursor(0,10);
+    lcd.print("tambah sayang sama");
+    lcd.setCursor(0,20);
+    lcd.print("aku hehe");
   }
 
 
@@ -427,4 +469,3 @@ void tampil() {
 
   lcd.display();
 }
-
